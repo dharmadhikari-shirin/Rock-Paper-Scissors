@@ -34,8 +34,10 @@ $(document).ready(function(){
 		$('#userScore').html(0);
 		$('#userChoice').html("");
 		$('#botChoice').html("");
+		$('#timer').html("00:00");
 		$('#seconds').val("");
 		$('#minutes').val("");
+		$('#warning').addClass('hide');
 		startGame($('#seconds').val(), $('#minutes').val());
 	});
 	
@@ -45,16 +47,18 @@ $(document).ready(function(){
 	}
 	
 	function determineWinner(){
+		$('#warning').addClass('hide');
 		if(userScore == botScore){
 			$('#winner').html("Game Over! It's a tie");
 		}
 		else{
-		if(userScore > botScore){
-			$('#winner').html("Game Over! You won the game");
-		}
-		else{
-			$('#winner').html("Game Over! Computer wins");
-		}
+		   if(userScore > botScore){
+			   $('#winner').html("Game Over! You won the game");
+	    	}
+		   else{
+			   $('#winner').html("Game Over! Computer wins");
+		    }
+		   $('#winner').addClass('winner');
 		}
 	}
 	
@@ -83,7 +87,7 @@ $(document).ready(function(){
 			userChoice = $(this).val();
 			$('#userChoice').html(userChoice);
 			$('#botChoice').html(botChoice);
-		    alert('clicked!' + userChoice);
+		    
 		    if(botChoice == userChoice){
 				$('#winner').html("Its a tie");
 			    userScore++;
@@ -123,31 +127,27 @@ $(document).ready(function(){
 			$('#botScore').html(botScore);
 		});
 		
-		
-		
 	}
-	
- 
 	
 	function countdown(minutes,sec) {
 	    var seconds = sec;
 	    var mins = minutes;
 	    function tick() {
+	    	if(seconds == 10 && mins == 0 )
+	    		$('#warning').removeClass("hide");
 	        var counter = document.getElementById("timer");
 	        var current_minutes = mins;
 	        
 	        counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
 	        if( seconds > 0 ) {
-	        	if(seconds == 10)
-	        		$('#warning').show();
 	        	seconds --;
 	            setTimeout(tick, 1000);
 	        } else {
 	            if(mins > 0){
-	                countdown(mins-1,60);           
+	                countdown(mins-1,60);
 	            }
 	            else{
-	            	  determineWinner();
+	            	determineWinner();
 	            }
 	        }
 	    }

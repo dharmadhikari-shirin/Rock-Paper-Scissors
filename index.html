@@ -10,51 +10,64 @@
 <body>
 
 <div id = "wrapper">
-  <div id = "header">ROCK PAPER SCISSORS</div>
+  <div id = "header" class="font20 align-center">LETS PLAY!!!</div>
+  <br/>
+  <br/>
   <div>
-     
        <div>
          <span>Enter time limit:</span>
-            <div  >
-               <div >
-               <label for='minutes' >Minutes:</label>
-               <input type='text' id='minutes' />
+            <div>
+               <div>
+                 <label for='minutes' >Minutes:</label>
+                 <input type='text' id='minutes' />
                </div>
-
-              <div>
+               <br>
+               <div>
                  <label for='seconds'>Seconds:</label>
                  <input type='text' id='seconds'/>
-              </div>               
+               </div>               
            </div>
-           
-     </div>
-     <div>
+       </div>
+       <br/>
+       <div>
           <label for='timer'>Time remaining:</label>
           <div id='timer'></div>
-     </div>
-     <div id = "warning" class="hide">You have last 10 seconds remaining</div>
-     
-     <div id = "tools">
-        <input id="rock" type="button" class="button play_tool" value="rock">
-        <input id="paper" type="button" class="button play_tool" value="paper">
-        <input id="scissor" type="button" class="button play_tool" value="scissor">
-     </div>
-     <div >
-     <label for='userChoice'>Your choice:</label>
-       <div id="userChoice"></div>
-       <label for='botChoice'>Bot Choice</label>
-       <div id="botChoice"></div>
-      </div>
+       </div>
+       <div id = "warning" class="hide warning">You have last 10 seconds remaining</div>
+       <br/>
+       <div id = "tools">
+          <input id="rock" type="button" class="button play_tool" value="rock">
+          <input id="paper" type="button" class="button play_tool" value="paper">
+          <input id="scissor" type="button" class="button play_tool" value="scissor">
+       </div>
+       <div>
+          <div>
+             <label for='userChoice'>Your choice:</label>
+             <span id="userChoice"></span>
+          </div>
+          <div>
+            <label for='botChoice'>Bot choice:</label>
+            <span id="botChoice"></span>
+          </div>
+           <div id = "winner"></div>
+       </div>
+       <br/>
+       <div><span class="bold">SCORES</span>
+         <div>
+           <label for='userScore'>You:</label>
+           <span id="userScore">0</span>
+         </div>
+         <div>
+           <label for='botScore'>Bot:</label>
+           <span id="botScore">0</span>
+         </div>
+       </div>
       
-      <div>SCORES
-        <div id="userScore"></div>
-        <div id="botScore"></div>
-      </div>
-     <div id = "winner"></div>
-     <div id = "menu">
-        <input id = "start" type="button" class="button" value="START">
-        <input id = "restart" type="button" class="button" value="RESTART">
-     </div>
+       <br/>
+       <div id = "menu">
+          <input id = "start" type="button" class="button" value="start">
+          <input id = "restart" type="button" class="button" value="restart">
+       </div>
   </div>
   <div id = footer></div>
 </div>
