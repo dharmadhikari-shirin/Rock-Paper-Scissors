@@ -4,22 +4,51 @@
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 2px 2px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
 }
 
-
-@media only screen and (max-width: 500px) {
-    body {
-        background-color: lightblue;
-    }
+.div, .input[type='text'] , .label{
+	width:100%
 }
 
+@media only screen and (max-width: 768px) {
+    .input , .label,{
+      width:85%;
+    }
+    
+    .button{
+      width:85%;
+      margin-bottom:10px;
+    }
+    
+    .align-center{
+	text-align:center;
+}
+}
 
 .hide{
 	display:none;
+}
+
+.warning{
+	color:red;
+}
+
+.winner{
+	background-color:yellow;
+	color:blue;
+	width:85%;
+}
+
+.font20{
+	font-size:20px;
+}
+
+.bold{
+	font-weight:bold;
 }
 
