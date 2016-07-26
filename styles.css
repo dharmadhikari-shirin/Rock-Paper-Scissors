@@ -11,17 +11,25 @@
     font-size: 16px;
 }
 
-.div, .input[type='text'] , .label{
+label{
 	width:100%
 }
 
+input[type='text']{
+	width:5%;
+}
+
 @media only screen and (max-width: 768px) {
-    .input[type='text'], .label,{
+    label,{
       width:85%;
     }
     
+    input[type='text']{
+	  width:100%;
+    }
+
     .button{
-      width:85%;
+      width:100%;
       margin-bottom:10px;
     }
     
@@ -39,7 +47,6 @@
 }
 
 .winner{
-	background-color:yellow;
 	color:blue;
 	width:85%;
 }
@@ -51,4 +58,5 @@
 .bold{
 	font-weight:bold;
 }
+
 
